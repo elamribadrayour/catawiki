@@ -1,0 +1,10 @@
+[tool.poetry]
+name = "catawiki-data-processing"
+version = "0.1.0"
+description = "A project for processing and exploring Catawiki data"
+authors = ["badr-ayour.el-amri <45420194+elamribadrayour@users.noreply.github.com>"]
+license = "MIT"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

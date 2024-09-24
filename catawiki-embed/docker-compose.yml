@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  catawiki-embed-text:
+    user: root
+    image: catawiki-embed:0.1
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      CACHE_PATH: "/code/data"
+    volumes:
+      - ./src/job/:/code/job
+      - ../catawiki-cache:/code/data
+    command: python -u main.py embed-text
+
+  catawiki-embed-image:
+    user: root
+    image: catawiki-embed:0.1
+    environment:
+      CACHE_PATH: "/code/data"
+    volumes:
+      - ./src/job/:/code/job
+      - ../catawiki-cache:/code/data
+    command: python -u main.py embed-image
+
+# model_name = "clip-ViT-B-32"
+# model_name = "all-MiniLM-L6-v2"

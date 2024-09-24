@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  catawiki-scrape:
+    user: root
+    image: catawiki-scrape:0.1
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      EXEC_DATE: "2024-09-20"
+      CACHE_PATH: "/code/data"
+    volumes:
+      - ../catawiki-cache:/code/data
+      - ./src/job/:/code/job
+    command: python -u main.py scrape

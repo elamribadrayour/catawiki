@@ -1,0 +1,1 @@
+"""catawiki cache directory."""

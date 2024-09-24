@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  catawiki-app:
+    user: root
+    image: catawiki-app:0.1
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      CACHE_PATH: "/code/data"
+    ports:
+      - 8080:8080
+    volumes:
+      - ../catawiki-cache:/code/data
+      - ./src/app/:/code/app
+    command: streamlit run 📄_main.py --server.address=0.0.0.0 --server.port=8080

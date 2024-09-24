@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "catawiki-embed"
+version = "0.1.0"
+description = "Catawiki embedding pipeline"
+authors = ["badr-ayour.el-amri <45420194+elamribadrayour@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = "^0.12.5"
+sentence-transformers = "^3.1.1"
+result = "^0.17.0"
+pyarrow = "^17.0.0"
+pandas = "^2.2.2"
+pillow = "^10.4.0"
+duckdb = "^1.1.0"
+requests = "^2.32.3"
+
+
+[tool.poetry.group.ci.dependencies]
+ruff = "^0.6.6"
+mypy = "^1.11.2"
+types-requests = "^2.32.0.20240914"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+ignore_missing_imports = true
